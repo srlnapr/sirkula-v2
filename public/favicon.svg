@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Background Gradient: Deep Forest Green -->
+    <linearGradient id="sirkulaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B4D3E" />
+      <stop offset="100%" stop-color="#0E2F25" />
+    </linearGradient>
+
+    <!-- Loop Arc Gradient 1: Vibrant Emerald to Mint -->
+    <linearGradient id="loopArc1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <!-- Loop Arc Gradient 2: Gold/Ochre into Forest Green -->
+    <linearGradient id="loopArc2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E6AF2E" />
+      <stop offset="60%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Center Sprout Gradient -->
+    <linearGradient id="sproutGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#6EE7B7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Base Badge with Subtle Border -->
+  <circle cx="32" cy="32" r="30" fill="url(#sirkulaBg)" stroke="#2E7D5B" stroke-width="1.5" />
+
+  <!-- Outer Circular Flow Arc 1 (Top & Right clockwise stroke) -->
+  <path
+    d="M 23 13 A 20 20 0 0 1 51 31"
+    stroke="url(#loopArc1)"
+    stroke-width="3.5"
+    stroke-linecap="round"
+  />
+  <!-- Flow Arrowhead 1 -->
+  <path
+    d="M 48 36 L 52.5 30 L 45.5 28.5 Z"
+    fill="#34D399"
+  />
+
+  <!-- Outer Circular Flow Arc 2 (Bottom & Left clockwise stroke) -->
+  <path
+    d="M 41 51 A 20 20 0 0 1 13 33"
+    stroke="url(#loopArc2)"
+    stroke-width="3.5"
+    stroke-linecap="round"
+  />
+  <!-- Flow Arrowhead 2 -->
+  <path
+    d="M 16 28 L 11.5 34 L 18.5 35.5 Z"
+    fill="#E6AF2E"
+  />
+
+  <!-- Center Organic Sprout & Leaves -->
+  <!-- Stem -->
+  <path
+    d="M 32 44 C 32 37 32 32 32 26"
+    stroke="#6EE7B7"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
+
+  <!-- Right Primary Leaf -->
+  <path
+    d="M 32 33 C 32 23 44 20 44 20 C 44 20 42 32 32 36 Z"
+    fill="url(#sproutGrad)"
+  />
+
+  <!-- Left Secondary Leaf -->
+  <path
+    d="M 32 37 C 32 28 22 25 22 25 C 22 25 24 35 32 39 Z"
+    fill="#34D399"
+    fill-opacity="0.9"
+  />
+
+  <!-- Center Glow Dot / Seed Core -->
+  <circle cx="32" cy="43" r="2" fill="#E6AF2E" />
+</svg>
