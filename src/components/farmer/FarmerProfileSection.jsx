@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { FARMER_PROFILE_DATA } from '../../data/mockData';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
 
 export default function FarmerProfileSection() {
-  const [profile, setProfile] = useState(FARMER_PROFILE_DATA);
+  const [profile, setProfile] = useDemoStorage(
+    DEMO_STORAGE_KEYS.FARMER_PROFILE,
+    FARMER_PROFILE_DATA
+  );
   const [isEditing, setIsEditing] = useState(false);
   const [saveAlert, setSaveAlert] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setProfile({ ...profile });
     setIsEditing(false);
     setSaveAlert(true);
     setTimeout(() => setSaveAlert(false), 4000);

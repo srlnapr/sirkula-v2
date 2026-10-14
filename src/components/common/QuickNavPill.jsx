@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { resetAllDemoData } from '../../utils/demoStorage';
 
 export default function QuickNavPill() {
   const [isOpen, setIsOpen] = useState(false);
+  const [resetToast, setResetToast] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,11 +22,23 @@ export default function QuickNavPill() {
     navigate('/?logout=true');
   };
 
+  const handleResetDemo = () => {
+    resetAllDemoData();
+    setResetToast('Data simulasi demo berhasil dikembalikan ke awal!');
+    setTimeout(() => setResetToast(''), 3500);
+  };
+
   return (
     <aside 
       aria-label="Navigasi Pengujian Modul" 
       className="fixed bottom-5 right-5 z-[100] flex flex-col items-end gap-2 font-sans"
     >
+      {resetToast && (
+        <div className="bg-primary text-white text-xs font-semibold px-4 py-2.5 rounded-2xl shadow-xl border border-white/20 flex items-center gap-2 animate-fadeIn">
+          <span className="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span>
+          <span>{resetToast}</span>
+        </div>
+      )}
       {isOpen && (
         <nav 
           aria-label="Daftar Modul Sirkula" 
@@ -72,12 +86,32 @@ export default function QuickNavPill() {
             );
           })}
           
+          {/* Demo MVP Cache Control */}
+          <div className="pt-2 border-t border-primary/10 mt-1 flex flex-col gap-1.5">
+            <div className="flex items-center justify-between px-2 text-[11px] text-on-surface-variant">
+              <span className="flex items-center gap-1 font-semibold text-emerald-800">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Cache Demo: Aktif
+              </span>
+              <span className="text-[10px] text-outline">LocalStorage</span>
+            </div>
+            <button
+              type="button"
+              onClick={handleResetDemo}
+              className="w-full flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary hover:text-emerald-900 transition-colors text-xs font-bold border border-primary/10 cursor-pointer"
+              title="Kembalikan semua data simulasi ke awal"
+            >
+              <span className="material-symbols-outlined text-[15px]">restart_alt</span>
+              <span>Reset Data Demo ke Default</span>
+            </button>
+          </div>
+
           {/* Logout / Beranda Link inside panel if in dashboard */}
           {!isLandingPage && (
-            <div className="pt-1.5 border-t border-primary/10 mt-1">
+            <div className="pt-1 border-t border-primary/10 mt-1">
               <button
                 onClick={handleGoHomeLogout}
-                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-error hover:bg-error-container/30 transition-colors text-xs font-semibold text-left"
+                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-error hover:bg-error-container/30 transition-colors text-xs font-semibold text-left cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[16px]">logout</span>
                 <span>Logout ke Landing Page</span>

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { ADMIN_ORDERS_LIST } from '../../data/mockData';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
 
 export default function OrderManagementSection() {
-  const [orders, setOrders] = useState(ADMIN_ORDERS_LIST);
+  const [orders, setOrders] = useDemoStorage(
+    DEMO_STORAGE_KEYS.ADMIN_ORDERS,
+    ADMIN_ORDERS_LIST
+  );
   const [statusFilter, setStatusFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 

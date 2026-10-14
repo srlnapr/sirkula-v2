@@ -3,10 +3,14 @@ import {
   FARMER_YIELD_TRACKER_BATCHES,
   FARMER_PRODUCTIVITY_METRICS,
 } from '../../data/mockData';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
 
 export default function FarmerYieldTrackerSection() {
   const [activeTab, setActiveTab] = useState('tracker'); // 'tracker' | 'calendar' | 'productivity'
-  const [batches, setBatches] = useState(FARMER_YIELD_TRACKER_BATCHES);
+  const [batches, setBatches] = useDemoStorage(
+    DEMO_STORAGE_KEYS.FARMER_BATCHES,
+    FARMER_YIELD_TRACKER_BATCHES
+  );
   const [isAddBatchOpen, setIsAddBatchOpen] = useState(false);
   const [editingGrowthBatch, setEditingGrowthBatch] = useState(null);
   const [harvestingBatch, setHarvestingBatch] = useState(null);

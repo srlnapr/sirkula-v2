@@ -2,11 +2,21 @@ import React, { useState } from 'react';
 import {
   COFFEE_SHOP_PICKUP_REQUESTS,
   COFFEE_SHOP_PROFILE,
+  PICKUP_ROUTES,
 } from '../../data/mockData';
+import {
+  useDemoStorage,
+  getStoredDemoItem,
+  setStoredDemoItem,
+  DEMO_STORAGE_KEYS,
+} from '../../utils/demoStorage';
 
 export default function CoffeeShopPickupManager({ onRequestCreated }) {
   const [activeTab, setActiveTab] = useState('tracking'); // 'tracking' | 'schedule_form' | 'history'
-  const [requests, setRequests] = useState(COFFEE_SHOP_PICKUP_REQUESTS);
+  const [requests, setRequests] = useDemoStorage(
+    DEMO_STORAGE_KEYS.COFFEE_PICKUPS,
+    COFFEE_SHOP_PICKUP_REQUESTS
+  );
   const [selectedTrackingId, setSelectedTrackingId] = useState('REQ-PKP-104');
   const [searchHistory, setSearchHistory] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,6 +63,25 @@ export default function CoffeeShopPickupManager({ onRequestCreated }) {
     setIsModalOpen(false);
     setActiveTab('tracking');
     setSuccessToast(`Permintaan ${newReq.id} berhasil dikirim! Armada Hub sedang menjadwalkan rute.`);
+
+    // Auto-sync into Admin routes in demo cache
+    try {
+      const currentAdminRoutes = getStoredDemoItem(DEMO_STORAGE_KEYS.ADMIN_PICKUP_ROUTES, PICKUP_ROUTES);
+      const newAdminRoute = {
+        id: `PK-0${currentAdminRoutes.length + 1}`,
+        coffeeShop: COFFEE_SHOP_PROFILE.partnerName || 'Sana Coffee Roasters',
+        area: formAddress.split(',')[1]?.trim() || 'Bandung Wetan',
+        driver: 'Rahmat (Kurir #04)',
+        weight: `${formEstimatedWeight} kg`,
+        status: 'Terjadwal',
+        statusType: 'scheduled',
+        note: `Permintaan ${newReq.id} • Slot: ${formTimeSlot}`,
+      };
+      setStoredDemoItem(DEMO_STORAGE_KEYS.ADMIN_PICKUP_ROUTES, [newAdminRoute, ...currentAdminRoutes]);
+    } catch {
+      // ignore
+    }
+
     if (onRequestCreated) onRequestCreated(newReq);
     setTimeout(() => setSuccessToast(''), 6000);
   };

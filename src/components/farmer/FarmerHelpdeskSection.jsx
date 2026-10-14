@@ -1,30 +1,36 @@
 import React, { useState } from 'react';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
+
+const INITIAL_FARMER_TICKETS = [
+  {
+    id: 'TK-FARM-902',
+    category: 'Klaim Garansi Baglog 100%',
+    subject: 'Klaim 6 Baglog Terpapar Kapang Trichoderma (Batch #809)',
+    date: '23 Okt 2024',
+    status: 'approved',
+    statusLabel: 'Disetujui Penggantian',
+    priority: 'Tinggi',
+    description: 'Ditemukan bercak kapang hijau di leher 6 baglog saat sterilisasi hari ke-3. Foto bukti sudah terlampir.',
+    adminResponse: 'Klaim telah divalidasi oleh Tim Agronomis. 6 baglog pengganti baru disertakan pada pengantaran PO-BGL-8821 oleh Pak Budi gratis.',
+  },
+  {
+    id: 'TK-FARM-884',
+    category: 'Penyerapan Panen Offtaker',
+    subject: 'Jadwal Penimbangan & Angkut Hasil Panen Flushing 1',
+    date: '17 Okt 2024',
+    status: 'resolved',
+    statusLabel: 'Selesai Ditangani',
+    priority: 'Normal',
+    description: 'Panen Kumbung B Parongpong diperkirakan siap petik 18 Okt pagi, estimasi bobot 90 kg.',
+    adminResponse: 'Penjemputan berhasil diselesaikan oleh armada Hub Lembang. Total 92.5 kg jamur tiram Grade A diserap dengan nilai Rp 1.480.000.',
+  },
+];
 
 export default function FarmerHelpdeskSection() {
-  const [tickets, setTickets] = useState([
-    {
-      id: 'TK-FARM-902',
-      category: 'Klaim Garansi Baglog 100%',
-      subject: 'Klaim 6 Baglog Terpapar Kapang Trichoderma (Batch #809)',
-      date: '23 Okt 2024',
-      status: 'approved',
-      statusLabel: 'Disetujui Penggantian',
-      priority: 'Tinggi',
-      description: 'Ditemukan bercak kapang hijau di leher 6 baglog saat sterilisasi hari ke-3. Foto bukti sudah terlampir.',
-      adminResponse: 'Klaim telah divalidasi oleh Tim Agronomis. 6 baglog pengganti baru disertakan pada pengantaran PO-BGL-8821 oleh Pak Budi gratis.',
-    },
-    {
-      id: 'TK-FARM-884',
-      category: 'Penyerapan Panen Offtaker',
-      subject: 'Jadwal Penimbangan & Angkut Hasil Panen Flushing 1',
-      date: '17 Okt 2024',
-      status: 'resolved',
-      statusLabel: 'Selesai Ditangani',
-      priority: 'Normal',
-      description: 'Panen Kumbung B Parongpong diperkirakan siap petik 18 Okt pagi, estimasi bobot 90 kg.',
-      adminResponse: 'Penjemputan berhasil diselesaikan oleh armada Hub Lembang. Total 92.5 kg jamur tiram Grade A diserap dengan nilai Rp 1.480.000.',
-    },
-  ]);
+  const [tickets, setTickets] = useDemoStorage(
+    DEMO_STORAGE_KEYS.FARMER_TICKETS,
+    INITIAL_FARMER_TICKETS
+  );
 
   const [formData, setFormData] = useState({
     category: 'Klaim Garansi Baglog 100%',

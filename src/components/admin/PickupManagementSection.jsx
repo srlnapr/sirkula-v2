@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { PICKUP_ROUTES } from '../../data/mockData';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
 
 export default function PickupManagementSection() {
-  const [routes, setRoutes] = useState(PICKUP_ROUTES);
+  const [routes, setRoutes] = useDemoStorage(
+    DEMO_STORAGE_KEYS.ADMIN_PICKUP_ROUTES,
+    PICKUP_ROUTES
+  );
   const [filterStatus, setFilterStatus] = useState('all');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [newPickup, setNewPickup] = useState({

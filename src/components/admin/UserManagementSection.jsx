@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { ADMIN_USERS_LIST, ADMIN_PARTNER_VERIFICATIONS } from '../../data/mockData';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
 
 export default function UserManagementSection() {
   const [activeTab, setActiveTab] = useState('users'); // 'users' | 'verifications'
-  const [users, setUsers] = useState(ADMIN_USERS_LIST);
-  const [verifications, setVerifications] = useState(ADMIN_PARTNER_VERIFICATIONS);
+  const [users, setUsers] = useDemoStorage(
+    DEMO_STORAGE_KEYS.ADMIN_USERS,
+    ADMIN_USERS_LIST
+  );
+  const [verifications, setVerifications] = useDemoStorage(
+    DEMO_STORAGE_KEYS.ADMIN_VERIFICATIONS,
+    ADMIN_PARTNER_VERIFICATIONS
+  );
   const [roleFilter, setRoleFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 

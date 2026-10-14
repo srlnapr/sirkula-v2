@@ -1,30 +1,36 @@
 import React, { useState } from 'react';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
+
+const INITIAL_COFFEE_TICKETS = [
+  {
+    id: 'TK-CS-402',
+    category: 'Permohonan Wadah Bak Tambahan',
+    subject: 'Penambahan 1 Unit Bak 20L Antisipasi Lonjakan Ampas Weekend',
+    date: '23 Okt 2024',
+    status: 'approved',
+    statusLabel: 'Disetujui Admin Hub',
+    priority: 'Normal',
+    description: 'Volume ampas Jumat-Minggu meningkat hingga 30 kg, butuh 1 bak cadangan agar tidak meluap.',
+    adminResponse: 'Permintaan disetujui. Driver Rahmat akan membawakan 1 bak tambahan berpenutup kedap aroma pada jadwal besok pagi.',
+  },
+  {
+    id: 'TK-CS-388',
+    category: 'Masalah Operasional / Kurir',
+    subject: 'Penyesuaian Jam Tiba Kurir Menjadi Di Atas Pukul 09:00',
+    date: '16 Okt 2024',
+    status: 'resolved',
+    statusLabel: 'Selesai Ditangani',
+    priority: 'Tinggi',
+    description: 'Barista buka outlet pukul 07:30, mohon kurir tiba setelah shift pagi siap pada pukul 09:00 WIB.',
+    adminResponse: 'Rute Klaster Bandung #01 telah disesuaikan. Titik Sana Coffee Roasters kini dijadwalkan pada urutan pukul 09:00 - 09:30 WIB.',
+  },
+];
 
 export default function CoffeeShopHelpdeskSection() {
-  const [tickets, setTickets] = useState([
-    {
-      id: 'TK-CS-402',
-      category: 'Permohonan Wadah Bak Tambahan',
-      subject: 'Penambahan 1 Unit Bak 20L Antisipasi Lonjakan Ampas Weekend',
-      date: '23 Okt 2024',
-      status: 'approved',
-      statusLabel: 'Disetujui Admin Hub',
-      priority: 'Normal',
-      description: 'Volume ampas Jumat-Minggu meningkat hingga 30 kg, butuh 1 bak cadangan agar tidak meluap.',
-      adminResponse: 'Permintaan disetujui. Driver Rahmat akan membawakan 1 bak tambahan berpenutup kedap aroma pada jadwal besok pagi.',
-    },
-    {
-      id: 'TK-CS-388',
-      category: 'Masalah Operasional / Kurir',
-      subject: 'Penyesuaian Jam Tiba Kurir Menjadi Di Atas Pukul 09:00',
-      date: '16 Okt 2024',
-      status: 'resolved',
-      statusLabel: 'Selesai Ditangani',
-      priority: 'Tinggi',
-      description: 'Barista buka outlet pukul 07:30, mohon kurir tiba setelah shift pagi siap pada pukul 09:00 WIB.',
-      adminResponse: 'Rute Klaster Bandung #01 telah disesuaikan. Titik Sana Coffee Roasters kini dijadwalkan pada urutan pukul 09:00 - 09:30 WIB.',
-    },
-  ]);
+  const [tickets, setTickets] = useDemoStorage(
+    DEMO_STORAGE_KEYS.COFFEE_TICKETS,
+    INITIAL_COFFEE_TICKETS
+  );
 
   const [formData, setFormData] = useState({
     category: 'Permohonan Wadah Bak Tambahan',

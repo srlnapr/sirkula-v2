@@ -79,24 +79,30 @@ export default function AdminDashboard() {
               </div>
             </section>
 
-            {/* Sticky Module Filter Pills Bar (Single source of truth for module navigation) */}
-            <div className="sticky top-20 z-40 bg-background/95 backdrop-blur-xl -mx-3.5 sm:-mx-6 lg:-mx-8 px-3.5 sm:px-6 lg:px-8 py-2.5 border-b border-primary/10 shadow-[0_2px_8px_rgba(27,77,62,0.03)]">
-              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-0.5 scrollbar-none max-w-[1400px] mx-auto">
-                <span className="text-[11px] font-bold text-outline uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
-                  Pilih Modul:
+            {/* Sticky Module Filter Tabs Bar (Single source of truth for module navigation - straight underline) */}
+            <div className="sticky top-20 z-40 bg-background/95 backdrop-blur-xl -mx-3.5 sm:-mx-6 lg:-mx-8 px-3.5 sm:px-6 lg:px-8 border-b border-primary/15 shadow-[0_1px_4px_rgba(27,77,62,0.02)] pt-1">
+              <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto scrollbar-none max-w-[1400px] mx-auto">
+                <span className="text-[11px] font-bold text-outline uppercase tracking-wider shrink-0 mr-1 hidden sm:inline self-center pb-2">
+                  Modul:
                 </span>
                 {modulePills.map((pill) => (
                   <button
                     key={pill.id}
                     type="button"
                     onClick={() => setActiveModuleFilter(pill.id)}
-                    className={`px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl font-label-sm text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
+                    className={`group relative pb-3 pt-2 px-3 sm:px-3.5 text-xs font-semibold shrink-0 transition-all cursor-pointer flex items-center gap-2 border-b-2 -mb-px whitespace-nowrap ${
                       activeModuleFilter === pill.id
-                        ? 'bg-primary text-white shadow-xs'
-                        : 'bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-primary'
+                        ? 'border-primary text-primary font-bold'
+                        : 'border-transparent text-on-surface-variant hover:text-primary hover:border-outline-variant/60'
                     }`}
                   >
-                    <span className="material-symbols-outlined text-[15px]">{pill.icon}</span>
+                    <span
+                      className={`material-symbols-outlined text-[17px] transition-colors ${
+                        activeModuleFilter === pill.id ? 'text-primary' : 'text-on-surface-variant/70 group-hover:text-primary'
+                      }`}
+                    >
+                      {pill.icon}
+                    </span>
                     <span>{pill.label}</span>
                   </button>
                 ))}

@@ -13,23 +13,7 @@ import { COFFEE_SHOP_DATA } from '../data/mockData';
 export default function CoffeeShopDashboard() {
   const [activeTab, setActiveTab] = useState('all');
 
-  const moduleTabs = [
-    { id: 'all', label: 'Semua Fitur (11 Modul)', icon: 'apps' },
-    { id: 'dashboard', label: '1. Overview', icon: 'dashboard' },
-    { id: 'penjemputan', label: '2-5. Penjemputan & Tracking', icon: 'local_shipping', highlight: true },
-    { id: 'badge', label: '6. Sirkula Eco-Badge', icon: 'workspace_premium' },
-    { id: 'dampak', label: '7 & 8. Impact & ESG', icon: 'eco' },
-    { id: 'notifikasi', label: '9. Notifikasi', icon: 'notifications' },
-    { id: 'profil', label: '10. Profil Kedai', icon: 'store' },
-    { id: 'bantuan', label: '11. Pusat Bantuan', icon: 'support_agent' },
-  ];
 
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-    if (tabId === 'all' || tabId === 'dashboard') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-on-secondary-fixed">
@@ -83,77 +67,40 @@ export default function CoffeeShopDashboard() {
             </div>
           </section>
 
-          {/* Single Source of Truth: Module Selector Pills (Sticky below 80px navbar) */}
-          <div className="sticky top-20 z-30 bg-surface/95 backdrop-blur-md py-2.5 border-b border-primary/10 flex items-center gap-2 overflow-x-auto scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-12 lg:px-12">
-            {moduleTabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => handleTabClick(tab.id)}
-                className={`px-3.5 py-2 rounded-full text-xs font-semibold shrink-0 transition-all cursor-pointer flex items-center gap-1.5 ${
-                  activeTab === tab.id
-                    ? tab.highlight
-                      ? 'bg-secondary text-primary shadow-xs font-bold'
-                      : 'bg-primary text-white shadow-xs font-bold'
-                    : tab.highlight
-                    ? 'bg-secondary-container/60 text-on-secondary-container hover:bg-secondary-container'
-                    : 'bg-surface-container text-on-surface-variant hover:bg-surface-container-high'
-                }`}
-              >
-                <span className="material-symbols-outlined text-[16px]">{tab.icon}</span>
-                <span>{tab.label}</span>
-              </button>
-            ))}
+          {/* ================= MODUL 1: DASHBOARD OVERVIEW ================= */}
+          <div id="overview" className="scroll-mt-28">
+            <CoffeeShopMetrics />
           </div>
 
-          {/* ================= MODUL 1: DASHBOARD OVERVIEW ================= */}
-          {(activeTab === 'all' || activeTab === 'dashboard') && (
-            <div id="overview" className="scroll-mt-28">
-              <CoffeeShopMetrics />
-            </div>
-          )}
-
           {/* ================= MODUL 2, 3, 4, 5: LOGISTIK PENJEMPUTAN ================= */}
-          {/* Fitur 2: Jadwal Penjemputan, Fitur 3: Permintaan Penjemputan, Fitur 4: Tracking Penjemputan, Fitur 5: Riwayat Penjemputan */}
-          {(activeTab === 'all' || activeTab === 'penjemputan') && (
-            <div id="penjemputan" className="scroll-mt-28">
-              <CoffeeShopPickupManager />
-            </div>
-          )}
+          <div id="penjemputan" className="scroll-mt-28">
+            <CoffeeShopPickupManager />
+          </div>
 
           {/* ================= MODUL 6: SIRKULA ECO-BADGE ================= */}
-          {(activeTab === 'all' || activeTab === 'badge') && (
-            <div id="badge" className="scroll-mt-28">
-              <EcoBadgeCertificate />
-            </div>
-          )}
+          <div id="badge" className="scroll-mt-28">
+            <EcoBadgeCertificate />
+          </div>
 
           {/* ================= MODUL 7 & 8: IMPACT DASHBOARD & LAPORAN ESG ================= */}
-          {(activeTab === 'all' || activeTab === 'dampak') && (
-            <div id="dampak-lingkungan" className="scroll-mt-28">
-              <CoffeeShopImpactDashboard />
-            </div>
-          )}
+          <div id="dampak-lingkungan" className="scroll-mt-28">
+            <CoffeeShopImpactDashboard />
+          </div>
 
           {/* ================= MODUL 9: NOTIFIKASI ================= */}
-          {(activeTab === 'all' || activeTab === 'notifikasi') && (
-            <div id="notifikasi" className="scroll-mt-28">
-              <CoffeeShopNotificationSection />
-            </div>
-          )}
+          <div id="notifikasi" className="scroll-mt-28">
+            <CoffeeShopNotificationSection />
+          </div>
 
           {/* ================= MODUL 10: PROFIL MITRA KEDAI ================= */}
-          {(activeTab === 'all' || activeTab === 'profil') && (
-            <div id="profil-mitra" className="scroll-mt-28">
-              <CoffeeShopProfileSection />
-            </div>
-          )}
+          <div id="profil-mitra" className="scroll-mt-28">
+            <CoffeeShopProfileSection />
+          </div>
 
           {/* ================= MODUL 11: PUSAT BANTUAN ================= */}
-          {(activeTab === 'all' || activeTab === 'bantuan') && (
-            <div id="pusat-bantuan" className="scroll-mt-28">
-              <CoffeeShopHelpdeskSection />
-            </div>
-          )}
+          <div id="pusat-bantuan" className="scroll-mt-28">
+            <CoffeeShopHelpdeskSection />
+          </div>
 
         </div>
       </main>

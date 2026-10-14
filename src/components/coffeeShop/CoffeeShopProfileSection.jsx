@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { COFFEE_SHOP_PROFILE } from '../../data/mockData';
+import { useDemoStorage, DEMO_STORAGE_KEYS } from '../../utils/demoStorage';
 
 export default function CoffeeShopProfileSection() {
-  const [profile, setProfile] = useState(COFFEE_SHOP_PROFILE);
+  const [profile, setProfile] = useDemoStorage(
+    DEMO_STORAGE_KEYS.COFFEE_PROFILE,
+    COFFEE_SHOP_PROFILE
+  );
   const [isEditing, setIsEditing] = useState(false);
   const [saveAlert, setSaveAlert] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setProfile({ ...profile });
     setIsEditing(false);
     setSaveAlert(true);
     setTimeout(() => setSaveAlert(false), 4000);
