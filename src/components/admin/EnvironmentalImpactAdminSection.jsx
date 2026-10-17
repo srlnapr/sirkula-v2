@@ -21,7 +21,7 @@ export default function EnvironmentalImpactAdminSection() {
             Dashboard Dampak Lingkungan &amp; Reduksi Emisi
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 10: Rekapitulasi kuantitatif pengalihan limbah ampas kopi dari TPA Sarimukti dan estimasi pencegahan emisi gas metana (CH₄ Avoidance).
+            Rekapitulasi kuantitatif pengalihan limbah ampas kopi dari TPA Sarimukti dan estimasi pencegahan emisi gas metana (CH₄ Avoidance).
           </p>
         </div>
 

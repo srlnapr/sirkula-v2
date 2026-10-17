@@ -22,7 +22,7 @@ export default function CoffeeShopNotificationSection() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <span>🔔 FITUR 9: PUSAT NOTIFIKASI OPERASIONAL</span>
+            <span>🔔 PUSAT NOTIFIKASI OPERASIONAL</span>
           </div>
           <h2 className="font-headline-md text-headline-md font-bold text-primary">
             Notifikasi Jadwal, Status &amp; Pengingat Penjemputan

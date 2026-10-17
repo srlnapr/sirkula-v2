@@ -99,7 +99,7 @@ export default function CoffeeShopPickupManager({ onRequestCreated }) {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <span>🚚 FITUR 2, 3, 4, 5: OPERASIONAL LOGISTIK AMPAS</span>
+            <span>🚚 OPERASIONAL LOGISTIK AMPAS</span>
           </div>
           <h2 className="font-headline-md text-headline-md font-bold text-primary">
             Jadwal, Permintaan &amp; Tracking Penjemputan Ampas Kopi
@@ -134,9 +134,9 @@ export default function CoffeeShopPickupManager({ onRequestCreated }) {
       {/* Sub-Tabs: Fitur 4 (Tracking), Fitur 2 & 3 (Atur Jadwal), Fitur 5 (Riwayat) */}
       <div className="flex items-center gap-2 border-b border-primary/10 pb-3 overflow-x-auto scrollbar-none">
         {[
-          { id: 'tracking', label: 'Fitur 4: Live Tracking Penjemputan', icon: 'local_shipping' },
-          { id: 'schedule_form', label: 'Fitur 2 & 3: Form Jadwal & Permintaan', icon: 'calendar_month' },
-          { id: 'history', label: 'Fitur 5: Riwayat Penjemputan', icon: 'receipt_long' },
+          { id: 'tracking', label: 'Live Tracking Penjemputan', icon: 'local_shipping' },
+          { id: 'schedule_form', label: 'Form Jadwal & Permintaan', icon: 'calendar_month' },
+          { id: 'history', label: 'Riwayat Penjemputan', icon: 'receipt_long' },
         ].map((tab) => (
           <button
             key={tab.id}

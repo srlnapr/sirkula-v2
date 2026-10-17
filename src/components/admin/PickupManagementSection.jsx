@@ -70,7 +70,7 @@ export default function PickupManagementSection() {
             Manajemen Penjemputan Ampas Kopi
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 6: Atur jadwal kurir 48 jam, lokasi kedai kopi mitra, penugasan armada non-EV (pickup &amp; van), dan konfirmasi timbang.
+            Atur jadwal kurir 48 jam, lokasi kedai kopi mitra, penugasan armada non-EV (pickup &amp; van), dan konfirmasi timbang.
           </p>
         </div>
 

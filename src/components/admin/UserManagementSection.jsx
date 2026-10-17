@@ -119,7 +119,7 @@ export default function UserManagementSection() {
             Manajemen Pengguna &amp; Verifikasi Mitra
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 2 &amp; 3: Kelola akun kedai kopi, petani jamur, kurir lapangan, dan validasi permohonan kemitraan baru.
+            Kelola akun kedai kopi, petani jamur, kurir lapangan, dan validasi permohonan kemitraan baru.
           </p>
         </div>
 

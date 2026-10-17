@@ -24,7 +24,7 @@ export default function CoffeeShopProfileSection() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <span>☕ FITUR 10: PROFIL MITRA KEDAI KOPI</span>
+            <span>☕ PROFIL MITRA KEDAI KOPI</span>
           </div>
           <h2 className="font-headline-md text-headline-md font-bold text-primary">
             Profil Kedai &amp; Informasi Operasional Ampas

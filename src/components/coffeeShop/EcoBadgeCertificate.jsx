@@ -20,7 +20,7 @@ export default function EcoBadgeCertificate() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <span>🏅 FITUR 6: SIRKULA ECO-BADGE</span>
+            <span>🏅 SIRKULA ECO-BADGE</span>
           </div>
           <h2 className="font-headline-md text-headline-md text-primary font-semibold">
             Akreditasi &amp; Kredensial Sirkula Eco-Badge

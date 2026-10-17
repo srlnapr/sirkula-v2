@@ -23,7 +23,7 @@ export default function EcoBadgeManagerSection() {
             Manajemen Eco-Badge &amp; Laporan Dampak Kedai
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 11: Kelola penerbitan sertifikat Sirkula Eco-Badge bagi kedai kopi mitra, penentuan tier (Gold/Silver/Bronze), dan pengiriman QR standee meja.
+            Kelola penerbitan sertifikat Sirkula Eco-Badge bagi kedai kopi mitra, penentuan tier (Gold/Silver/Bronze), dan pengiriman QR standee meja.
           </p>
         </div>
 

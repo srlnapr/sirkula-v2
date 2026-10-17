@@ -80,7 +80,7 @@ export default function CoffeeShopHelpdeskSection() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <span>🛎️ FITUR 11: PUSAT BANTUAN &amp; PENGADUAN</span>
+            <span>🛎️ PUSAT BANTUAN &amp; PENGADUAN</span>
           </div>
           <h2 className="font-headline-md text-headline-md font-bold text-primary">
             Pusat Bantuan &amp; Pengaduan Operasional Penjemputan

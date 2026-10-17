@@ -66,7 +66,7 @@ export default function OrderManagementSection() {
             Manajemen Pesanan Baglog
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 5: Pantau seluruh pesanan baglog dari petani, konfirmasi pembayaran, dan perbarui status logistik pengiriman.
+            Pantau seluruh pesanan baglog dari petani, konfirmasi pembayaran, dan perbarui status logistik pengiriman.
           </p>
         </div>
 

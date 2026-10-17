@@ -34,7 +34,7 @@ export default function FarmerCatalogSection({ onAddToCart, onOpenCart }) {
             Katalog &amp; Pemesanan Baglog Jamur
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 2 &amp; 3: Dapatkan baglog formula 30% ampas kopi berkualitas tinggi langsung dari Hub Lembang dengan harga B2B terjangkau.
+            Dapatkan baglog formula 30% ampas kopi berkualitas tinggi langsung dari Hub Lembang dengan harga B2B terjangkau.
           </p>
         </div>
 

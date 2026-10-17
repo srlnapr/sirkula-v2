@@ -27,7 +27,7 @@ export default function CoffeeShopImpactDashboard() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-container text-primary text-xs font-bold uppercase tracking-wider mb-1">
-            <span>🌱 FITUR 7 &amp; 8: ESG &amp; DAMPAK LINGKUNGAN</span>
+            <span>🌱 ESG &amp; DAMPAK LINGKUNGAN</span>
           </div>
           <h2 className="font-headline-md text-headline-md font-bold text-primary">
             Impact Dashboard &amp; Laporan Dampak Lingkungan
@@ -59,8 +59,8 @@ export default function CoffeeShopImpactDashboard() {
       {/* Navigation Sub-Tabs */}
       <div className="flex items-center gap-2 border-b border-primary/10 pb-3 overflow-x-auto scrollbar-none">
         {[
-          { id: 'impact', label: 'Fitur 7: Metrik & Ekivalensi Dampak', icon: 'monitoring' },
-          { id: 'reports', label: 'Fitur 8: Rekap & Unduh Laporan Bulanan', icon: 'article' },
+          { id: 'impact', label: 'Metrik & Ekivalensi Dampak', icon: 'monitoring' },
+          { id: 'reports', label: 'Rekap & Unduh Laporan Bulanan', icon: 'article' },
           { id: 'branding', label: 'Kit Publikasi & ESG Branding', icon: 'share' },
         ].map((tab) => (
           <button

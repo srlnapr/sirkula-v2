@@ -44,7 +44,7 @@ export default function ProductionCropSection() {
             Manajemen Produksi &amp; Monitoring Budidaya
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 7 &amp; 8: Catat konversi ampas kopi ke baglog steril serta pantau siklus pertumbuhan kumbung petani jamur.
+            Catat konversi ampas kopi ke baglog steril serta pantau siklus pertumbuhan kumbung petani jamur.
           </p>
         </div>
 

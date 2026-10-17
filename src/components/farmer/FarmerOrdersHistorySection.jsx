@@ -16,7 +16,7 @@ export default function FarmerOrdersHistorySection({ orders = FARMER_ORDERS_DATA
             Riwayat Pesanan &amp; Tracking Distribusi Baglog
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 5 &amp; 6: Pantau proses pengadaan baglog, status pelunasan, serta posisi pengantaran armada kurir menuju kumbung Anda.
+            Pantau proses pengadaan baglog, status pelunasan, serta posisi pengantaran armada kurir menuju kumbung Anda.
           </p>
         </div>
 

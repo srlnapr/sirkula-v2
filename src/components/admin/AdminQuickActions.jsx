@@ -33,7 +33,7 @@ export default function AdminQuickActions() {
           </p>
         </div>
         <span className="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-primary font-bold">
-          4 Fitur Kontrol Cepat
+          4 Kontrol Cepat
         </span>
       </div>
 

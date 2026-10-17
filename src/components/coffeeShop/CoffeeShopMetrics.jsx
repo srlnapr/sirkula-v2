@@ -7,7 +7,7 @@ export default function CoffeeShopMetrics() {
       {/* Module Feature Badge */}
       <div className="flex items-center justify-between">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-primary font-mono text-[11px] font-bold uppercase tracking-wider">
-          <span>📊 FITUR 1: DASHBOARD OVERVIEW</span>
+          <span>📊 DASHBOARD OVERVIEW</span>
         </div>
         <span className="text-xs text-outline hidden sm:inline">
           Data real-time Klaster Bandung (Riau &amp; Dago)

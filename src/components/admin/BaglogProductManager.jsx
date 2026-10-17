@@ -87,7 +87,7 @@ export default function BaglogProductManager() {
             Manajemen Produk Baglog
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 4: Kelola varian baglog substrat jamur, harga jual B2B, stok siap buah di Hub Lembang, dan spesifikasi formula.
+            Kelola varian baglog substrat jamur, harga jual B2B, stok siap buah di Hub Lembang, dan spesifikasi formula.
           </p>
         </div>
 

@@ -22,7 +22,7 @@ export default function TransactionReportSection() {
             Laporan Transaksi &amp; Rekapitulasi Penjualan
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 9: Rekap pesanan baglog, arus kas pendapatan, analisis marjin laba 40%, dan riwayat pembukuan transaksi.
+            Rekap pesanan baglog, arus kas pendapatan, analisis marjin laba 40%, dan riwayat pembukuan transaksi.
           </p>
         </div>
 

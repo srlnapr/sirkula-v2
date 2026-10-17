@@ -23,7 +23,7 @@ export default function WebsiteSettingsSection() {
             Pengaturan Website &amp; Informasi Publik
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 12: Kelola teks pengumuman darurat, banner siaran hub, status slot pendaftaran mitra, dan FAQ landing page.
+            Kelola teks pengumuman darurat, banner siaran hub, status slot pendaftaran mitra, dan FAQ landing page.
           </p>
         </div>
 

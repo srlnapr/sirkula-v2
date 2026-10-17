@@ -99,13 +99,13 @@ export default function FarmerYieldTrackerSection() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-primary/10">
         <div>
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-1">
-            <span>🍄 FITUR UNGGULAN: FARMER YIELD TRACKER</span>
+            <span>🍄 FARMER YIELD TRACKER</span>
           </div>
           <h2 className="font-headline-md text-headline-md font-bold text-primary">
             Farmer Yield Tracker &amp; Kalender Panen
           </h2>
           <p className="text-xs text-on-surface-variant mt-0.5">
-            Fitur 7, 8, &amp; 9: Catat tanggal mulai budidaya, pantau kolonisasi miselium, peroleh estimasi panen berbasis SOP ilmiah 21 hari, dan rekap produktivitas panen.
+            Catat tanggal mulai budidaya, pantau kolonisasi miselium, peroleh estimasi panen berbasis SOP ilmiah 21 hari, dan rekap produktivitas panen.
           </p>
         </div>
 
